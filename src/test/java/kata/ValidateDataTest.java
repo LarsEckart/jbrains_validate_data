@@ -1,5 +1,6 @@
 package kata;
 
+import static kata.App.validateOdd;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import com.github.larseckart.tcr.CommitOnGreenExtension;
@@ -16,13 +17,13 @@ class ValidateDataTest {
   @ParameterizedTest
   @ValueSource(ints = {3, 5, -1})
   void odd_numbers_are_odd(int input) {
-    assertThat(App.validateOdd(input)).isTrue();
+    assertThat(validateOdd(input)).isTrue();
   }
 
   @ParameterizedTest
   @ValueSource(ints = {4, 6, 0, -2})
   void even_numbers_are_not_odd(int input) {
-    assertThat(App.validateOdd(input)).isFalse();
+    assertThat(validateOdd(input)).isFalse();
   }
 
 }
