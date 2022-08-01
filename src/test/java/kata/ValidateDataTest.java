@@ -33,4 +33,10 @@ class ValidateDataTest {
     assertThat(validateEven(input)).isFalse();
   }
 
+  @ParameterizedTest
+  @ValueSource(ints = {4, 6, 0, -2})
+  void even_numbers_are_even(int input) {
+    assertThat(validateEven(input)).isTrue();
+  }
+
 }

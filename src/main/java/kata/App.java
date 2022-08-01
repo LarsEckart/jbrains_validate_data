@@ -12,6 +12,6 @@ class App {
   }
 
   public static boolean validateEven(int input) {
-    return false;
+    return !validateOdd(input);
   }
 }
