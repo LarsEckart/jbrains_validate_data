@@ -8,6 +8,6 @@ class App {
   }
 
   public static boolean validateOdd(int number) {
-    return false;
+    return true;
   }
 }
