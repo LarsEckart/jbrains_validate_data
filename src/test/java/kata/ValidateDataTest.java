@@ -17,4 +17,9 @@ class ValidateDataTest {
     assertThat(App.validateOdd(3)).isTrue();
   }
 
+  @Test
+  void even_numbers_are_not_odd() {
+    assertThat(App.validateOdd(4)).isFalse();
+  }
+
 }
