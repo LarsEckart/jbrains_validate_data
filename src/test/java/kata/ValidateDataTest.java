@@ -3,9 +3,11 @@ package kata;
 import static kata.App.validateBetween;
 import static kata.App.validateEven;
 import static kata.App.validateOdd;
+import static kata.Validate.validateThat;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import com.github.larseckart.tcr.CommitOnGreenExtension;
+import org.assertj.core.api.AbstractDateAssert;
 import org.junit.jupiter.api.DisplayNameGeneration;
 import org.junit.jupiter.api.DisplayNameGenerator;
 import org.junit.jupiter.api.Test;
@@ -44,6 +46,11 @@ class ValidateDataTest {
   @Test
   void five_is_between_2_and_8() {
     assertThat(validateBetween(5, 2, 8)).isTrue();
+  }
+
+  @Test
+  void five_is_between_2_and_8_with_Validate_object() {
+    assertThat(validateThat(5).isBetween(2, 8)).isTrue();
   }
 
 }
