@@ -10,4 +10,8 @@ class App {
   public static boolean validateOdd(int number) {
     return number % 2 != 0;
   }
+
+  public static boolean validateEven(int input) {
+    return false;
+  }
 }
