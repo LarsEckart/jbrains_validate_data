@@ -15,14 +15,14 @@ class ValidateDataTest {
 
   @ParameterizedTest
   @ValueSource(ints = {3, 5, -1})
-  void odd_numbers_are_odd() {
-    assertThat(App.validateOdd(3)).isTrue();
+  void odd_numbers_are_odd(int input) {
+    assertThat(App.validateOdd(input)).isTrue();
   }
 
   @ParameterizedTest
   @ValueSource(ints = {4, 6, 0, -2})
-  void even_numbers_are_not_odd() {
-    assertThat(App.validateOdd(4)).isFalse();
+  void even_numbers_are_not_odd(int input) {
+    assertThat(App.validateOdd(input)).isFalse();
   }
 
 }
