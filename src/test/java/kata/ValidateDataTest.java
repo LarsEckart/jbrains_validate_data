@@ -61,7 +61,12 @@ class ValidateDataTest {
   }
 
   @Test
-  void number_is_positive() {
+  void positive_number_is_positive() {
     assertThat(validateThat(1).isPositive()).isTrue();
+  }
+
+  @Test
+  void negative_number_is_not_positive() {
+    assertThat(validateThat(-2).isPositive()).isFalse();
   }
 }
