@@ -45,13 +45,17 @@ class ValidateDataTest {
       5,2,8
       1,0,2
       """})
-  void five_is_between_2_and_8(int number, int low, int high) {
+  void number_is_between(int number, int low, int high) {
     assertThat(validateThat(number).isBetween(low, high)).isTrue();
   }
 
-  @Test
-  void five_is_between_2_and_8_with_Validate_object() {
-    assertThat(validateThat(5).isBetween(2, 8)).isTrue();
+  @ParameterizedTest
+  @CsvSource({"""
+      1,1,10
+      10,1,10
+      """})
+  void number_is_between_is_exclusive(int number, int low, int high) {
+    assertThat(validateThat(number).isBetween(low, high)).isFalse();
   }
 
 }
