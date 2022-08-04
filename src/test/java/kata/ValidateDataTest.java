@@ -1,6 +1,5 @@
 package kata;
 
-import static kata.Validate.validateBetween;
 import static kata.Validate.validateThat;
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -42,7 +41,7 @@ class ValidateDataTest {
 
   @Test
   void five_is_between_2_and_8() {
-    assertThat(validateBetween(5, 2, 8)).isTrue();
+    assertThat(validateThat(5).isBetween(2, 8)).isTrue();
   }
 
   @Test

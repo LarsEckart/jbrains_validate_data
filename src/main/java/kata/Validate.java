@@ -20,10 +20,6 @@ class Validate {
     return this.number % 2 == 0;
   }
 
-  public static boolean validateBetween(int number, int low, int high) {
-    return validateThat(number).isBetween(low, high);
-  }
-
   public boolean isBetween(int low, int high) {
     return low < number && number < high;
   }
