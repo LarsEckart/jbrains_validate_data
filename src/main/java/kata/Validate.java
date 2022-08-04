@@ -13,7 +13,7 @@ class Validate {
   }
 
   public static boolean validateEven(int input) {
-    return !validateOdd(input);
+    return !validateThat(input).isOdd();
   }
 
   public static boolean validateOdd(int number) {
