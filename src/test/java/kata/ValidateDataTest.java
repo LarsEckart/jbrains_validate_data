@@ -60,7 +60,7 @@ class ValidateDataTest {
   }
 
   @Test
-  void number_is_negative() {
+  void number_is_positive() {
     assertThat(validateThat(1).isPositive()).isTrue();
   }
 }
