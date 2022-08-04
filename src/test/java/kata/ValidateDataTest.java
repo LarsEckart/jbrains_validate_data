@@ -45,7 +45,9 @@ class ValidateDataTest {
   }
 
   @ParameterizedTest
-  @CsvSource({"5,2,8"})
+  @CsvSource({"""
+  5,2,8
+  """})
   void five_is_between_2_and_8(int number, int low, int high) {
     assertThat(validateThat(number).isBetween(low, high)).isTrue();
   }
