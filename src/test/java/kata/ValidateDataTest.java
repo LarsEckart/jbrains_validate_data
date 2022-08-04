@@ -1,8 +1,8 @@
 package kata;
 
-import static kata.App.validateBetween;
+import static kata.Validate.validateBetween;
 import static kata.Validate.validateEven;
-import static kata.App.validateOdd;
+import static kata.Validate.validateOdd;
 import static kata.Validate.validateThat;
 import static org.assertj.core.api.Assertions.assertThat;
 
