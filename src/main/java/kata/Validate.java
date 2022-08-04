@@ -12,12 +12,12 @@ class Validate {
     return new Validate(number);
   }
 
-  public static boolean validateEven(int number) {
-    return !validateThat(number).isOdd();
-  }
-
   public boolean isOdd() {
     return this.number % 2 != 0;
+  }
+
+  public boolean isEven() {
+    return this.number % 2 == 0;
   }
 
   public static boolean validateBetween(int number, int low, int high) {
