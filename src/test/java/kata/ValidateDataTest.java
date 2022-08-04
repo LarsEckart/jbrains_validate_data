@@ -1,13 +1,12 @@
 package kata;
 
 import static kata.App.validateBetween;
-import static kata.App.validateEven;
+import static kata.Validate.validateEven;
 import static kata.App.validateOdd;
 import static kata.Validate.validateThat;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import com.github.larseckart.tcr.CommitOnGreenExtension;
-import org.assertj.core.api.AbstractDateAssert;
 import org.junit.jupiter.api.DisplayNameGeneration;
 import org.junit.jupiter.api.DisplayNameGenerator;
 import org.junit.jupiter.api.Test;

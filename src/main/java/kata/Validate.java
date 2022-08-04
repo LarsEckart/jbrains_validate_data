@@ -12,6 +12,10 @@ class Validate {
     return new Validate(number);
   }
 
+  public static boolean validateEven(int input) {
+    return !App.validateOdd(input);
+  }
+
   public boolean isBetween(int low, int high) {
     return low < number && number < high;
   }

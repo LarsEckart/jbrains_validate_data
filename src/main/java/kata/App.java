@@ -11,10 +11,6 @@ class App {
     return number % 2 != 0;
   }
 
-  public static boolean validateEven(int input) {
-    return !validateOdd(input);
-  }
-
   public static boolean validateBetween(int number, int low, int high) {
     return low < number && number < high;
   }
