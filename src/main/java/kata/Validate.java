@@ -17,7 +17,11 @@ class Validate {
   }
 
   public static boolean validateOdd(int number) {
-    return number % 2 != 0;
+    return validateThat(number).isOdd();
+  }
+
+  private boolean isOdd() {
+    return this.number % 2 != 0;
   }
 
   public static boolean validateBetween(int number, int low, int high) {
