@@ -16,11 +16,7 @@ class Validate {
     return !validateThat(number).isOdd();
   }
 
-  public static boolean validateOdd(int number) {
-    return validateThat(number).isOdd();
-  }
-
-  private boolean isOdd() {
+  public boolean isOdd() {
     return this.number % 2 != 0;
   }
 

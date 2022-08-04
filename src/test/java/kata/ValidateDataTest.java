@@ -2,7 +2,6 @@ package kata;
 
 import static kata.Validate.validateBetween;
 import static kata.Validate.validateEven;
-import static kata.Validate.validateOdd;
 import static kata.Validate.validateThat;
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -21,13 +20,13 @@ class ValidateDataTest {
   @ParameterizedTest
   @ValueSource(ints = {3, 5, -1})
   void odd_numbers_are_odd(int input) {
-    assertThat(validateOdd(input)).isTrue();
+    assertThat(validateThat(input).isOdd()).isTrue();
   }
 
   @ParameterizedTest
   @ValueSource(ints = {4, 6, 0, -2})
   void even_numbers_are_not_odd(int input) {
-    assertThat(validateOdd(input)).isFalse();
+    assertThat(validateThat(input).isOdd()).isFalse();
   }
 
   @ParameterizedTest
