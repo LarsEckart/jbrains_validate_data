@@ -4,11 +4,16 @@ import static kata.Validate.validateThat;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import com.github.larseckart.tcr.CommitOnGreenExtension;
+import java.util.stream.Stream;
 import org.junit.jupiter.api.DisplayNameGeneration;
 import org.junit.jupiter.api.DisplayNameGenerator;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.Arguments;
+import org.junit.jupiter.params.provider.CsvFileSource;
+import org.junit.jupiter.params.provider.CsvSource;
+import org.junit.jupiter.params.provider.MethodSource;
 import org.junit.jupiter.params.provider.ValueSource;
 
 @ExtendWith(CommitOnGreenExtension.class)
@@ -39,9 +44,10 @@ class ValidateDataTest {
     assertThat(validateThat(input).isEven()).isTrue();
   }
 
-  @Test
-  void five_is_between_2_and_8() {
-    assertThat(validateThat(5).isBetween(2, 8)).isTrue();
+  @ParameterizedTest
+  @CsvSource({"5,2,8"})
+  void five_is_between_2_and_8(int number, int low, int high) {
+    assertThat(validateThat(number).isBetween(low, high)).isTrue();
   }
 
   @Test
