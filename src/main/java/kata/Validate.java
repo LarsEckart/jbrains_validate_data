@@ -21,7 +21,7 @@ class Validate {
   }
 
   public static boolean validateBetween(int number, int low, int high) {
-    return low < number && number < high;
+    return new Validate(number).isBetween(low, high);
   }
 
   public boolean isBetween(int low, int high) {
