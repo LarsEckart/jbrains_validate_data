@@ -1,6 +1,7 @@
 package kata;
 
 import static kata.Validate.validateThat;
+import static org.assertj.core.api.Assertions.*;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import com.github.larseckart.tcr.CommitOnGreenExtension;
@@ -58,4 +59,8 @@ class ValidateDataTest {
     assertThat(validateThat(number).isBetween(low, high)).isFalse();
   }
 
+  @Test
+  void number_is_negative() {
+    assertThat(validateThat(1).isPositive()).isTrue();
+  }
 }

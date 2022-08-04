@@ -23,4 +23,8 @@ class Validate {
   public boolean isBetween(int low, int high) {
     return low < number && number < high;
   }
+
+  public boolean isPositive() {
+    return true;
+  }
 }
