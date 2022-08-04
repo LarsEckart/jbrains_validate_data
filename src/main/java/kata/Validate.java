@@ -12,8 +12,8 @@ class Validate {
     return new Validate(number);
   }
 
-  public static boolean validateEven(int input) {
-    return !validateThat(input).isOdd();
+  public static boolean validateEven(int number) {
+    return !validateThat(number).isOdd();
   }
 
   public static boolean validateOdd(int number) {
