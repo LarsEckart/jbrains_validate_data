@@ -45,6 +45,7 @@ class ValidateDataTest {
   @CsvSource({"""
       5,2,8
       1,0,2
+      -4,-5,-1
       """})
   void number_is_between(int number, int low, int high) {
     assertThat(validateThat(number).isBetween(low, high)).isTrue();
