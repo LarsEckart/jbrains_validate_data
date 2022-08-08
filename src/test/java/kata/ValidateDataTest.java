@@ -74,4 +74,9 @@ class ValidateDataTest {
   void zero_is_not_positive() {
     assertThat(validateThat(0).isPositive()).isFalse();
   }
+
+  @Test
+  void zero_is_not_negative() {
+    assertThat(validateThat(0).isNegative()).isFalse();
+  }
 }

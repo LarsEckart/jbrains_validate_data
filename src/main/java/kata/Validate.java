@@ -27,4 +27,8 @@ class Validate {
   public boolean isPositive() {
     return number > 0;
   }
+
+  public boolean isNegative() {
+    return false;
+  }
 }
