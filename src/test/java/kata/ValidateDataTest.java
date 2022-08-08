@@ -1,7 +1,6 @@
 package kata;
 
 import static kata.Validate.validateThat;
-import static org.assertj.core.api.Assertions.*;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import com.github.larseckart.tcr.CommitOnGreenExtension;
@@ -77,8 +76,7 @@ class ValidateDataTest {
     assertThat(validateThat(0).isPositive()).isFalse();
   }
 
-  @ParameterizedTest
-  @ValueSource(ints = {3, 5, -1})
+  @Test
   void zero_is_not_negative() {
     assertThat(validateThat(0).isNegative()).isFalse();
   }
