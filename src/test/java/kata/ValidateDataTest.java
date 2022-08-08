@@ -60,14 +60,16 @@ class ValidateDataTest {
     assertThat(validateThat(number).isBetween(low, high)).isFalse();
   }
 
-  @Test
-  void positive_number_is_positive() {
-    assertThat(validateThat(1).isPositive()).isTrue();
+  @ParameterizedTest
+  @ValueSource(ints = {2, 65, 1})
+  void positive_number_is_positive(int input) {
+    assertThat(validateThat(input).isPositive()).isTrue();
   }
 
-  @Test
-  void negative_number_is_not_positive() {
-    assertThat(validateThat(-2).isPositive()).isFalse();
+  @ParameterizedTest
+  @ValueSource(ints = {-2, -65, -1})
+  void negative_number_is_not_positive(int input) {
+    assertThat(validateThat(input).isPositive()).isFalse();
   }
 
   @Test
@@ -75,18 +77,21 @@ class ValidateDataTest {
     assertThat(validateThat(0).isPositive()).isFalse();
   }
 
-  @Test
+  @ParameterizedTest
+  @ValueSource(ints = {3, 5, -1})
   void zero_is_not_negative() {
     assertThat(validateThat(0).isNegative()).isFalse();
   }
 
-  @Test
-  void positive_number_is_not_negative() {
-    assertThat(validateThat(1).isNegative()).isFalse();
+  @ParameterizedTest
+  @ValueSource(ints = {3, 15, 103})
+  void positive_number_is_not_negative(int input) {
+    assertThat(validateThat(input).isNegative()).isFalse();
   }
 
-  @Test
-  void negative_number_is_negative() {
-    assertThat(validateThat(-2).isNegative()).isTrue();
+  @ParameterizedTest
+  @ValueSource(ints = {-23, -55, -1})
+  void negative_number_is_negative(int input) {
+    assertThat(validateThat(input).isNegative()).isTrue();
   }
 }
