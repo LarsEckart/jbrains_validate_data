@@ -29,6 +29,6 @@ class Validate {
   }
 
   public boolean isNegative() {
-    return false;
+    return number < 0;
   }
 }
