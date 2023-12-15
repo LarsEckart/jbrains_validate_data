@@ -4,6 +4,7 @@ import static kata.Validate.validateThat;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import com.github.larseckart.tcr.CommitOnGreenExtension;
+import java.util.function.Supplier;
 import org.junit.jupiter.api.DisplayNameGeneration;
 import org.junit.jupiter.api.DisplayNameGenerator;
 import org.junit.jupiter.api.Test;
@@ -84,7 +85,11 @@ class ValidateDataTest {
   @ParameterizedTest
   @ValueSource(ints = {3, 15, 103})
   void positive_number_is_not_negative(int input) {
-    assertThat(validateThat(input).isNegative()).isFalse();
+    invalidCase(() -> validateThat(input).isNegative());
+  }
+
+  private static void invalidCase(Supplier<Boolean> f) {
+    assertThat(f.get()).isFalse();
   }
 
   @ParameterizedTest
